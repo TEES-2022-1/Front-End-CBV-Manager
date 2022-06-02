@@ -53,7 +53,7 @@ function ShowTSC(){
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{technical.year}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
                     
-                    <Link to={`/formLeagueEdit/${technical.id}`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
+                    <Link to={`/modalCommiteeEdit/${params.teams_id}/${technical.id}`}title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
                     <Link to="/listTeams"  onClick={()=>handleRemoveLeague(technical.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
                     </div>
