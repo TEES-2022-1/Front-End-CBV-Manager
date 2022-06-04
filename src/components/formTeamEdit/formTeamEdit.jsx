@@ -13,10 +13,7 @@ function FormTeamEdit(){
     const [gymnasium, setGymnasium] = useState();
     const history = useNavigate();
     const params = useParams()
-     
     
-     
-  
      async function PutTeam(e){
         e.preventDefault();
          await api.put(`/teams/${params.id}`,{

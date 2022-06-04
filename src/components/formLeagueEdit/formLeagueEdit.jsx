@@ -17,10 +17,7 @@ function FormLeagueEdit(){
     const [finish_in, setFinishIn] = useState();
     const history = useNavigate();
     const params = useParams();
-     
-    
-     
-  
+       
      async function PutLeague(e){
         e.preventDefault();
          await api.put(`/competitions/${params.id}`,{

@@ -23,8 +23,7 @@ function ListTeams(){
     async function handleRemoveTeams(id){
         const deleteResponse = await api.delete(`/teams/${id}`);
         if(deleteResponse.status===204){
-            setTeams(teams.filter(team=>team.id !== id))
-            
+            setTeams(teams.filter(team=>team.id !== id))    
         }
         window.location.reload();
     } 
@@ -61,8 +60,7 @@ function ListTeams(){
                     <div class="Teams_dropzoneTeam__object__containerLinks">
                     <Link to={`teams/${team.id}/modalCommitee`} class="Teams__dropzoneTeams__object__containerLinks__btTechnical">Cadastrar Comissão Técnica</Link>
                     <Link to="/formPlayer" class="Teams__dropzoneTeams__object__containerLinks__btPlayer">Cadastrar Jogador</Link>
-                    </div>
-                                
+                    </div>               
                 </div>      
         </main>
         );

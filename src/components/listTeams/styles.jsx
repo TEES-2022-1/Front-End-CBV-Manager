@@ -26,7 +26,6 @@ export const TeamContainer = styled.div`
  }
  .Teams{
     margin-left:20px;
-    width:1080px;
     border:5px;
     border-radius:5px;
     margin-top:10px;
@@ -52,10 +51,13 @@ export const TeamContainer = styled.div`
                 padding-right:40px;
                 padding-top:10px;
                 font-size:20px;
+               
+               
                 
                 &__btCommitee{
                     margin-right:20px;
                     color:black;
+
                 }
                 &__btEdit{
                     margin-right:20px;
@@ -76,9 +78,12 @@ export const TeamContainer = styled.div`
 
         &__object{
             margin-left:10px;
+            line-height:0.6;
+          
           
               &__containerLinks{
                   display:flex;
+                 
                  
             
             &__btTechnical{
@@ -86,7 +91,7 @@ export const TeamContainer = styled.div`
                 text-decoration:none;
                 margin-left:10px;
                 color:blue;
-                justify-content:space-between;
+               
                 
             }
 
@@ -95,8 +100,8 @@ export const TeamContainer = styled.div`
                 text-decoration:none;
                 margin-left:10px;
                 color:blue; 
+                
             }
-
          
          } 
         }
