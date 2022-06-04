@@ -55,7 +55,7 @@ function ListLeague(){
                     </div>
                   
                     <p class="Teams__dropzoneTeams__object">Ano: {leagues.year}</p>
-                    <p class="Teams__dropzoneTeams__object">Quantidade de Equipes: {leagues.category==="MALE"?"Masculino":"Feminino"}</p>
+                    <p class="Teams__dropzoneTeams__object">Categoria: {leagues.category==="MALE"?"Masculino":"Feminino"}</p>
                     <p class="Teams__dropzoneTeams__object">Início: {Moment(leagues.begin_in).format('DD/MM/YYYY')}</p>
                     <p class="Teams__dropzoneTeams__object">Fase Classificatória: {Moment(leagues.classificatory_limit).format('DD/MM/YYYY')}</p>
                     <p class="Teams__dropzoneTeams__object">Quartas de Final:{Moment(leagues.quarter_finals_limit).format('DD/MM/YYYY')}</p>

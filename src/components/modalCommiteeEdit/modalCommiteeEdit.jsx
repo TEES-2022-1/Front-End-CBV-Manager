@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import {useNavigate,useParams, Link} from 'react-router-dom';
 import {Main, FormContentTeam} from "../modalCommiteeEdit/styles"
 import Header from "../header/header"
@@ -16,10 +16,29 @@ function ModalCommiteeEdit(){
     const [doctor,setDoctor] = useState();
     const [year,setYear] = useState();
     const history = useNavigate();
-    const params = useParams(); 
-    
-     
+   
+   
+    useEffect(() => {
+        GetTechnicalCommitee();
+      },)
   
+
+    function GetTechnicalCommitee(){
+        const params = useParams();
+        useEffect(()=>{
+          api.get(`/teams/${params.teams_id}/technical_committee`).then(response=>{
+              setCoach(response)
+              setCoachAssistent(response[0].coach_assistent)
+              setSupervisor(response[0].supervisor)
+              setPersonalTrainer(response[0].personal_trainer)
+              setPhysiotherapist(response[0].physiotherapist)
+              setMasseuse(response[0].masseuse)
+              setDoctor(response[0].doctor)
+              setYear(response[0].year)  
+          })
+      },)
+     
+    
      async function PutTechnicalCommitee(e){
         e.preventDefault();
         
@@ -33,10 +52,10 @@ function ModalCommiteeEdit(){
             doctor,
             year,
         });
-          
+        GetTechnicalCommitee()
         history("/listTeams");
         console.log(response.data)
-   
+      
 } 
    
     return(
@@ -57,22 +76,22 @@ function ModalCommiteeEdit(){
          <div class="register__registerContainer__form__inputs">
              <div class="register__registerContainer__form__inputs__inputLeft">
              <label for="nameTeam"><strong>Técnico(a)</strong></label>
-             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="nameTeam" value={coach} onChange={e=>setCoach(e.target.value)}/>
+             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="nameTeam" value={coach} onChange={e=>setCoach(e.target.coach)}/>
              <label for="yearFundation"><strong>Técnico Assistente</strong></label>
-             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistent} onChange={e=>setCoachAssistent(e.target.value)}/>
+             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistent} onChange={e=>setCoachAssistent(e.target.coach_assistent)}/>
              <label for="yearFundation"><strong>Supervisor</strong></label>
-             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={supervisor} onChange={e=>setSupervisor(e.target.value)}/>
+             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={supervisor} onChange={e=>setSupervisor(e.target.supervisor)}/>
              <label  for="yearFundation"><strong>Personal Trainer</strong></label>
-             <input required type = "type" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={personal_trainer} onChange={e=>setPersonalTrainer(e.target.value)}/>
+             <input required type = "type" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={personal_trainer} onChange={e=>setPersonalTrainer(e.target.personal_trainer)}/>
              </div>
 
              <div class="register__registerContainer__form__inputs__inputRight">
             <label for="gymnasium"><strong>Fisioterapeuta</strong></label>
-            <input required type = "text" class="register__registerContainer__form__inputs__inputRight__input"  id="gymnasium" value={physiotherapist} onChange={e=>setPhysiotherapist(e.target.value)}/>
+            <input required type = "text" class="register__registerContainer__form__inputs__inputRight__input"  id="gymnasium" value={physiotherapist} onChange={e=>setPhysiotherapist(e.target.physiotherapist)}/>
             <label for="masseuse"><strong>Massagista</strong></label>
-            <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="masseuse" value={masseuse} onChange={e=>setMasseuse(e.target.value)}/>
+            <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="masseuse" value={masseuse} onChange={e=>setMasseuse(e.target.masseuse)}/>
             <label for="doctor"><strong>Médico</strong></label>
-            <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="doctor" value={doctor} onChange={e=>setDoctor(e.target.value)}/>
+            <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="doctor" value={doctor} onChange={e=>setDoctor(e.target.doctor)}/>
             <label for="doctor"><strong>Ano</strong></label>
             <input required type="number" class="register__registerContainer__form__inputs__inputRight__input" id="year" value={year} onChange={e=>setYear(e.target.value)}/>      
             </div>
@@ -89,5 +108,5 @@ function ModalCommiteeEdit(){
     
     )
 }
-
+}
 export default ModalCommiteeEdit;

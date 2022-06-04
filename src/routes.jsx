@@ -13,6 +13,7 @@ import ListLeague from './components/listLeague/listLeague';
 import FormLeagueEdit from './components/formLeagueEdit/formLeagueEdit';
 import FormTeamEdit from './components/formTeamEdit/formTeamEdit';
 import ModalCommiteeEdit from './components/modalCommiteeEdit/modalCommiteeEdit';
+import FormPlayer from './components/formPlayer/formPlayer';
 
 
  function Routes(){
@@ -28,6 +29,7 @@ import ModalCommiteeEdit from './components/modalCommiteeEdit/modalCommiteeEdit'
         <Route element={<FormLeagueEdit/>} path="/formLeagueEdit/:id"/>
         <Route element={<FormTeamEdit/>} path ="/formTeamEdit/:id"/>
         <Route element={<ModalCommiteeEdit/>} path="/modalCommiteeEdit/:teams_id/:technical_committee_id"/>
+        <Route element={<FormPlayer/>} path="/formPlayer"/>
        
         </Router>
         </BrowserRouter>
