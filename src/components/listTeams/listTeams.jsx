@@ -2,9 +2,12 @@ import React, {useState,useEffect} from "react";
 import {Main, TeamContainer} from "../listTeams/styles";
 import {Link} from "react-router-dom"
 import Header from "../header/header";
-import { BiEditAlt } from "react-icons/bi";
+import { BiEditAlt} from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import {HiUserGroup} from "react-icons/hi";
+import {BsFillFileEarmarkMedicalFill} from "react-icons/bs"
+import {GiAmericanFootballPlayer} from "react-icons/gi"
+
+
 import api from "../../services/api";
 
 
@@ -45,7 +48,8 @@ function ListTeams(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{team.name}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
-                    <Link to={`teams/${team.id}/showTSC`}  class="Teams__dropzoneTeams__containerLinkName__icons__btCommitee" title="Comissão Técnica"><HiUserGroup/></Link> 
+                    <Link to="#"  class="Teams__dropzoneTeams__containerLinkName__icons__btPlayerShow" title="Jogador(es)"><GiAmericanFootballPlayer/></Link>    
+                    <Link to={`teams/${team.id}/showTSC`}  class="Teams__dropzoneTeams__containerLinkName__icons__btCommitee" title="Comissão Técnica"><BsFillFileEarmarkMedicalFill/></Link> 
                     <Link to={`/formTeamEdit/${team.id}`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
                     <Link to="/listTeams"  onClick={()=>handleRemoveTeams(team.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
@@ -53,8 +57,10 @@ function ListTeams(){
                     <p class="Teams__dropzoneTeams__object">Ginásio: {team.gymnasium}</p>
                     <p class="Teams__dropzoneTeams__object">Categoria: {team.category==="MALE"?"Masculino":"Feminino"}</p>
                     <p class="Teams__dropzoneTeams__object">Ano de Fundação:{team.year_foundation}</p>
-                    <Link to={`teams/${team.id}/modalCommitee`} class="Teams__dropzoneTeams__object__btTechnical">Cadastrar Comissão Técnica</Link>
-                   
+                    <div class="Teams_dropzoneTeam__object__containerLinks">
+                    <Link to={`teams/${team.id}/modalCommitee`} class="Teams__dropzoneTeams__object__containerLinks__btTechnical">Cadastrar Comissão Técnica</Link>
+                    <Link to="/formPlayer" class="Teams__dropzoneTeams__object__containerLinks__btPlayer">Cadastrar Jogador</Link>
+                    </div>
                                 
                 </div>      
         </main>

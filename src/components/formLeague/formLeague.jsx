@@ -17,9 +17,7 @@ function FormLeague(){
     const [finish_in, setFinishIn] = useState();
     const history = useNavigate();
      
-    
-     
-  
+      
      async function PostLeague(e){
         e.preventDefault();
          await api.post('/competitions',{
@@ -31,8 +29,7 @@ function FormLeague(){
             quarter_finals_limit,
             semifinals_limit,
             finish_in,
-        });
-          
+        });      
         history("/");
     } 
         

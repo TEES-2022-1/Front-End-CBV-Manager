@@ -5,7 +5,7 @@ import Header from "../header/header"
 import api from "../../services/api";
 
 
-function FormPlayer(){
+function FormPlayerEdit(){
     
     const [name,setName] = useState('');
     const [document,setDocument] = useState();
@@ -13,9 +13,9 @@ function FormPlayer(){
     const [number, setNumber] = useState();
     const history = useNavigate();
      
-     async function PostPlayer(e){
+     async function PutPlayer(e){
         e.preventDefault();
-         await api.post('/teams',{
+         await api.put('/teams',{
             name,
             document,
             birthday,
@@ -25,7 +25,6 @@ function FormPlayer(){
         history.push("/");
     } 
         
-
 
     return(
         <Main>
@@ -38,10 +37,10 @@ function FormPlayer(){
     <main class="register">
         <div class="register__registerContainer">
             <div class="register__registerContainer__registerHeader">
-        <h1 class="register__registerContainer__registerHeader__title">Jogador</h1>
+        <h1 class="register__registerContainer__registerHeader__title">Editar Jogador</h1>
         
             </div>
-        <form onSubmit = {PostPlayer} class="register__registerContainer__form">
+        <form onSubmit = {PutPlayer} class="register__registerContainer__form">
          <div class="register__registerContainer__form__inputs">
              <div class="register__registerContainer__form__inputs__inputLeft">
              <label for="nameTeam"><strong>Nome</strong></label>
@@ -68,4 +67,4 @@ function FormPlayer(){
     )
 }
 
-export default FormPlayer;
+export default FormPlayerEdit;

@@ -64,20 +64,41 @@ export const TeamContainer = styled.div`
 
                 &__btDelete{
                     color:black;
-                }  
+                }
+                
+                &__btPlayerShow{
+                    color:black;
+                    margin-right:20px;
+
+                }
             } 
         }
 
         &__object{
             margin-left:10px;
-
+          
+              &__containerLinks{
+                  display:flex;
+                 
+            
             &__btTechnical{
                 font-size:16px;
                 text-decoration:none;
                 margin-left:10px;
-                margin-top:10px;
                 color:blue;
+                justify-content:space-between;
+                
             }
+
+            &__btPlayer{
+                font-size:16px;
+                text-decoration:none;
+                margin-left:10px;
+                color:blue; 
+            }
+
+         
+         } 
         }
     }
  }

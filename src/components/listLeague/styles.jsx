@@ -53,7 +53,7 @@ export const TeamContainer = styled.div`
                 padding-top:10px;
                 font-size:20px;
                 
-                &__btCommitee{
+                &__btTeam{
                     margin-right:20px;
                     color:black;
                 }
