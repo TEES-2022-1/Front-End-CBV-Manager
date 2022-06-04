@@ -38,6 +38,7 @@ function ListTeams(){
         <TeamContainer>
         <div class="title">
                 <h1 class="title__name">Equipes</h1>
+                <Link to="/" class="title__linkTeams" >Voltar</Link>
             
             </div>
             {teams.map(team=>{

@@ -64,7 +64,12 @@ export const TeamContainer = styled.div`
 
                 &__btDelete{
                     color:black;
-                }  
+                }
+                
+                &__btRegisterTeam{
+                    color:black;
+                    margin-right:20px;
+                }
             } 
         }
 

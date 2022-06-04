@@ -4,7 +4,8 @@ import {Link} from "react-router-dom"
 import Header from "../header/header";
 import { BiEditAlt } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-import {AiOutlineTeam} from "react-icons/ai"
+import {AiOutlineTeam} from "react-icons/ai";
+import {FaPeopleArrows} from "react-icons/fa"
 import api from "../../services/api";
 import Moment from "moment";
 
@@ -46,6 +47,7 @@ function ListLeague(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{leagues.title}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
+                    <Link to="/formTeam" title="Cadastrar Equipe" class="Teams__dropzoneTeams__containerLinkName__icons__btRegisterTeam"><FaPeopleArrows/></Link>
                     <Link to="/listTeams" title="Equipe(s)" class="Teams__dropzoneTeams__containerLinkName__icons__btTeam"><AiOutlineTeam/></Link>
                     <Link to={`/formLeagueEdit/${leagues.id}`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
                     <Link to="/"  onClick={()=>handleRemoveLeague(leagues.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
@@ -59,7 +61,6 @@ function ListLeague(){
                     <p class="Teams__dropzoneTeams__object">Quartas de Final:{Moment(leagues.quarter_finals_limit).format('DD/MM/YYYY')}</p>
                     <p class="Teams__dropzoneTeams__object">Semifinais:{Moment(leagues.semifinals_limit).format('DD/MM/YYYY')}</p>
                     <p class="Teams__dropzoneTeams__object">Final: {Moment(leagues.finish_in).format('DD/MM/YYYY')}</p>            
-                    <Link to="/formTeam" class="Teams__dropzoneTeams__object">Cadastrar Equipe</Link> 
                 </div>      
         </main>
         );
