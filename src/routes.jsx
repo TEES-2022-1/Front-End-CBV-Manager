@@ -15,6 +15,7 @@ import FormTeamEdit from './components/formTeamEdit/formTeamEdit';
 import ModalCommiteeEdit from './components/modalCommiteeEdit/modalCommiteeEdit';
 import FormPlayer from './components/formPlayer/formPlayer';
 import FormPlayerEdit from './components/formPlayerEdit/formPlayerEdit';
+import Classification from './components/classification/classification';
 
 
  function Routes(){
@@ -32,6 +33,7 @@ import FormPlayerEdit from './components/formPlayerEdit/formPlayerEdit';
         <Route element={<ModalCommiteeEdit/>} path="/modalCommiteeEdit/:teams_id/:technical_committee_id"/>
         <Route element={<FormPlayer/>} path="/formPlayer"/>
         <Route element={<FormPlayerEdit/>} path="/formPlayerEdit"/>
+        <Route element={<Classification/>} path="/classification"/>
         </Router>
         </BrowserRouter>
         

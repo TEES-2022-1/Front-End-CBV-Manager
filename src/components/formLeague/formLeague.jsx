@@ -20,7 +20,7 @@ function FormLeague(){
       
      async function PostLeague(e){
         e.preventDefault();
-         await api.post('/competitions',{
+         await api.post('/leagues',{
             title,
             year,
             category,
