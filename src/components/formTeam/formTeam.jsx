@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {Main, FormContentTeam} from "../formTeam/styles"
 import Header from "../header/header"
 import api from "../../services/api";
@@ -11,21 +11,23 @@ function FormTeam(){
     const [category, setCategory] = useState("MALE"|"FEMALE");
     const [year_foundation, setYear_foundation] = useState();
     const [gymnasium, setGymnasium] = useState();
+    const [affiliated_federation_in,setAffiliated] = useState();
     const history = useNavigate();
-     
+    const params = useParams(); 
     
      
   
      async function PostTeam(e){
         e.preventDefault();
-         await api.post('/teams',{
+         await api.post(`/leagues/${params.leagues_id}/teams`,{
             name,
             category,
             year_foundation,
             gymnasium,
+            affiliated_federation_in
         });
           
-        history("/listTeams");
+        history(`/leagues/${params.leagues_id}/teams/listTeams`);
     } 
 
     return(
@@ -49,6 +51,8 @@ function FormTeam(){
              <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="nameTeam" value={name} onChange={e=>setName(e.target.value)}/>
              <label for="yearFundation"><strong>Ano de fundação</strong></label>
              <input required type ="number" maxLength="4" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={year_foundation} onChange={e=>setYear_foundation(e.target.value)}/>
+             <label for="afiliationDate"><strong>Data de Afiliação</strong></label>
+             <input required type ="date" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={affiliated_federation_in} onChange={e=>setAffiliated(e.target.value)}/>
              </div>
              <div class="register__registerContainer__form__inputs__inputRight">
             <label for="arena"><strong>Ginásio</strong></label>

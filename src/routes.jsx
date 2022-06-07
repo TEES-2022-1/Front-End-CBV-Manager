@@ -16,24 +16,26 @@ import ModalCommiteeEdit from './components/modalCommiteeEdit/modalCommiteeEdit'
 import FormPlayer from './components/formPlayer/formPlayer';
 import FormPlayerEdit from './components/formPlayerEdit/formPlayerEdit';
 import Classification from './components/classification/classification';
+import ListPlayer from './components/listPlayer/listPlayer';
 
 
  function Routes(){
     return(
         <BrowserRouter>
         <Router>
-        <Route element ={<ListTeams/>} path="/listTeams"/>    
+        <Route element ={<ListTeams/>} path="/leagues/:leagues_id/teams/listTeams"/>    
         <Route element={<FormLeague/>} path="/formLeague"/>
-        <Route element={<FormTeam/>} path="/formTeam"/>
-        <Route element={<ModalCommitee/>} path ="/listTeams/teams/:teams_id/modalCommitee"/>
-        <Route element={<ShowTSC/>} path="/listTeams/teams/:teams_id/showTSC"/>
+        <Route element={<FormTeam/>} path="/leagues/:leagues_id/teams/formTeam"/>
+        <Route element={<ModalCommitee/>} path ="/leagues/:leagues_id/teams/:teams_id/modalCommitee"/>
+        <Route element={<ShowTSC/>} path="/teams/:teams_id/showTSC"/>
         <Route element={<ListLeague/>} path="/"/>
         <Route element={<FormLeagueEdit/>} path="/formLeagueEdit/:id"/>
-        <Route element={<FormTeamEdit/>} path ="/formTeamEdit/:id"/>
+        <Route element={<FormTeamEdit/>} path ="leagues/:leagues_id/teams/:id/formTeamEdit"/>
         <Route element={<ModalCommiteeEdit/>} path="/modalCommiteeEdit/:teams_id/:technical_committee_id"/>
-        <Route element={<FormPlayer/>} path="/formPlayer"/>
+        <Route element={<FormPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/formPlayer"/>
         <Route element={<FormPlayerEdit/>} path="/formPlayerEdit"/>
         <Route element={<Classification/>} path="/classification"/>
+        <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
         </Router>
         </BrowserRouter>
         

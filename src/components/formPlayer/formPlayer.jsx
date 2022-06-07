@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {Main, FormContentTeam} from "../formTeam/styles"
 import Header from "../header/header"
 import api from "../../services/api";
@@ -10,23 +10,23 @@ function FormPlayer(){
     const [name,setName] = useState('');
     const [document,setDocument] = useState();
     const [birthday,setBirthday] = useState();
-    const [number, setNumber] = useState();
+    const [shirt_number, setShirtNumber] = useState();
     const history = useNavigate();
+    const params = useParams();
      
      async function PostPlayer(e){
         e.preventDefault();
-         await api.post('/teams',{
+         await api.post(`/leagues/${params.leagues_id}/teams/${params.teams_id}/players`,{
             name,
             document,
             birthday,
-            number,
+            shirt_number,
         });
           
-        history.push("/");
+    history(`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`);
+ 
     } 
         
-
-
     return(
         <Main>
         <Header 
@@ -53,7 +53,7 @@ function FormPlayer(){
             <label for="arena"><strong>Data de Nascimento</strong></label>
             <input type = "date" class="register__registerContainer__form__inputs__inputRight__input"  id="arena" value={birthday} onChange={e=>setBirthday(e.target.value)}/>
             <label for="arena"><strong>Número</strong></label>
-            <input type = "number" maxLength={4} class="register__registerContainer__form__inputs__inputRight__input"  id="arena" value={number} onChange={e=>setNumber(e.target.value)}/>   
+            <input type = "number" maxLength={4} class="register__registerContainer__form__inputs__inputRight__input"  id="arena" value={shirt_number} onChange={e=>setShirtNumber(e.target.value)}/>   
             </div>
             </div> 
          <div class="register__registerContainer__form__bt">

@@ -7,7 +7,7 @@ width:100%;
 height:100vh;
 `;
 
-export const TeamContainer = styled.div`
+export const PlayerContainer = styled.div`
  background-color: #E5E5E5;
 
  .title{
@@ -28,16 +28,18 @@ export const TeamContainer = styled.div`
     margin-left:20px;
     border:5px;
     border-radius:5px;
+    padding-bottom:10px;
     margin-top:10px;
    
 
     &__dropzoneTeams{
         background-color:#FFFFFF;
         width:1310px;
-        height:180px;
+        height:145px;
         display:flex;
         flex-direction:column;
         line-height:0.1;
+        
 
         &__containerLinkName{
             display:flex;
@@ -78,7 +80,7 @@ export const TeamContainer = styled.div`
 
         &__object{
             margin-left:10px;
-            line-height:0.4;
+          
           
           
               &__containerLinks{

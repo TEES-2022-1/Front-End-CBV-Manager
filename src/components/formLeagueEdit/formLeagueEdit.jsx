@@ -20,7 +20,7 @@ function FormLeagueEdit(){
        
      async function PutLeague(e){
         e.preventDefault();
-         await api.put(`/competitions/${params.id}`,{
+         await api.put(`/leagues/${params.id}`,{
             title,
             year,
             category,

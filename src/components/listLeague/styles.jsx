@@ -17,7 +17,7 @@ export const TeamContainer = styled.div`
      justify-content:space-between;
      align-items:center;
 
-     &__linkTeams{
+     &__linkLeague{
          margin-right:40px;
          text-decoration:none;
          color:#0000FF;
@@ -35,7 +35,7 @@ export const TeamContainer = styled.div`
     &__dropzoneTeams{
         background-color:#FFFFFF;
         width:1310px;
-        height:280px;
+        height:290px;
         display:flex;
         flex-direction:column;
         line-height:0.1;

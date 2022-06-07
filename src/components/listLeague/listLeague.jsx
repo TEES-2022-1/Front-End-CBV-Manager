@@ -14,13 +14,13 @@ import Moment from "moment";
 function ListLeague(){
     const [league,setLeague] = useState([]);
     useEffect(()=>{
-        api.get('/competitions').then(response=>{
+        api.get('/leagues').then(response=>{
             setLeague(response.data);    
         })
     },[])
 
     async function handleRemoveLeague(id){
-        const deleteResponse = await api.delete(`/competitions/${id}`);
+        const deleteResponse = await api.delete(`/leagues/${id}`);
         if(deleteResponse.status===204){
             
             setLeague(league.filter(leagues=>leagues.id !== id))
@@ -39,6 +39,7 @@ function ListLeague(){
         <TeamContainer>
         <div class="title">
                 <h1 class="title__name">Ligas</h1>
+                <Link to="/formLeague" class="title__linkLeague" >Cadastrar Liga</Link>
             </div>       
         {league.map(leagues=>{
         return(
@@ -47,8 +48,8 @@ function ListLeague(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{leagues.title}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
-                    <Link to="/formTeam" title="Cadastrar Equipe" class="Teams__dropzoneTeams__containerLinkName__icons__btRegisterTeam"><FaPeopleArrows/></Link>
-                    <Link to="/listTeams" title="Equipe(s)" class="Teams__dropzoneTeams__containerLinkName__icons__btTeam"><AiOutlineTeam/></Link>
+                    <Link to={`/leagues/${leagues.id}/teams/formTeam`} title="Cadastrar Equipe" class="Teams__dropzoneTeams__containerLinkName__icons__btRegisterTeam"><FaPeopleArrows/></Link>
+                    <Link to={`/leagues/${leagues.id}/teams/listTeams`} title="Equipe(s)" class="Teams__dropzoneTeams__containerLinkName__icons__btTeam"><AiOutlineTeam/></Link>
                     <Link to={`/formLeagueEdit/${leagues.id}`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
                     <Link to="/"  onClick={()=>handleRemoveLeague(leagues.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
