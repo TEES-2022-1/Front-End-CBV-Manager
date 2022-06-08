@@ -29,7 +29,8 @@ export const TeamContainer = styled.div`
     width:1080px;
     border:5px;
     border-radius:5px;
-    margin-top:10px;
+    padding-bottom:20px;
+   
    
 
     &__dropzoneTeams{

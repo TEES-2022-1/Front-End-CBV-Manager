@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useNavigate, useParams} from 'react-router-dom';
+import {useNavigate, useParams, Link} from 'react-router-dom';
 import {Main, FormContentTeam} from "../formTeam/styles"
 import Header from "../header/header"
 import api from "../../services/api";
@@ -67,6 +67,7 @@ function FormTeam(){
             </div> 
          <div class="register__registerContainer__form__bt">
              <button type = "submit" class="register__registerContainer__form__bt__btRegister">Cadastrar Equipe</button>
+             <Link to="/" class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>
         </div>
