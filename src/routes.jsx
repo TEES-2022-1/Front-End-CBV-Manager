@@ -33,7 +33,7 @@ import ListPlayer from './components/listPlayer/listPlayer';
         <Route element={<FormTeamEdit/>} path ="leagues/:leagues_id/teams/:id/formTeamEdit"/>
         <Route element={<ModalCommiteeEdit/>} path="/modalCommiteeEdit/:teams_id/:technical_committee_id"/>
         <Route element={<FormPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/formPlayer"/>
-        <Route element={<FormPlayerEdit/>} path="/formPlayerEdit"/>
+        <Route element={<FormPlayerEdit/>} path="/leagues/:leagues_id/teams/:teams_id/formPlayerEdit"/>
         <Route element={<Classification/>} path="/classification"/>
         <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
         </Router>

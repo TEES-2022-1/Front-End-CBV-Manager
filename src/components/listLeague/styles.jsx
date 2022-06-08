@@ -31,8 +31,6 @@ export const TeamContainer = styled.div`
     border-radius:5px;
     padding-bottom:20px;
    
-   
-
     &__dropzoneTeams{
         background-color:#FFFFFF;
         width:1310px;

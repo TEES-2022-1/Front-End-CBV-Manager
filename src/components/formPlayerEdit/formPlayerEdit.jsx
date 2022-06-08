@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useParams, Link} from 'react-router-dom';
 import {Main, FormContentTeam} from "../formTeam/styles"
 import Header from "../header/header"
 import api from "../../services/api";
@@ -12,17 +12,17 @@ function FormPlayerEdit(){
     const [birthday,setBirthday] = useState();
     const [number, setNumber] = useState();
     const history = useNavigate();
-     
+    const params = useParams();
      async function PutPlayer(e){
         e.preventDefault();
-         await api.put('/teams',{
+         await api.put(`/leagues/${params.leagues_id}/teams/${params.teams_id}/players`,{
             name,
             document,
             birthday,
             number,
         });
           
-        history.push("/");
+        history.push(`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`);
     } 
         
 
@@ -57,6 +57,7 @@ function FormPlayerEdit(){
             </div> 
          <div class="register__registerContainer__form__bt">
              <button type = "submit" class="register__registerContainer__form__bt__btRegister">Cadastrar Jogador</button>
+             <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`} class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>
         </div>

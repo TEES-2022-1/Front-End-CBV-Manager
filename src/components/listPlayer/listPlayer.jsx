@@ -48,7 +48,7 @@ function ListPlayer(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{players.name}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
-                    <Link to={`/leagues/${params.leagues_id}/teams/${players.id}/formTeamEdit`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
+                    <Link to={`/leagues/${params.leagues_id}/teams/${players.id}/formPlayerEdit`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
                     <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`}  onClick={()=>handleRemovePlayer(players.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
                     </div>
