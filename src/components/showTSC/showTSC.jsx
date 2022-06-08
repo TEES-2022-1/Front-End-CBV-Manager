@@ -19,6 +19,7 @@ function ShowTSC(){
     api.get(`/leagues/${params.leagues_id}/teams/${params.teams_id}/technical_committee`).then(response=>{
         objectArray.push(response.data);
         setTechnicalCommitee(objectArray);
+        console.log(objectArray);
     })
 },[params.leagues_id, params.teams_id ])
 

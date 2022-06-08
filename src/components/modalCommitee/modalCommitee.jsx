@@ -32,7 +32,7 @@ function ModalCommitee(){
             doctor,
         });
           
-        history(`/teams/${params.teams_id}/showTSC`);
+        history(`/leagues/${params.leagues_id}/teams/${params.teams_id}/showTSC`);
     }catch(error){
         const message = error.response.status
         if(message === 500){
