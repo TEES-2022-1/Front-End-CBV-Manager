@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from "react";
-import {Main, TeamContainer} from "../listLeague/styles";
+import {Main, TeamContainer} from "../showTSC/styles";
 import {Link,useParams} from "react-router-dom"
 import Header from "../header/header";
 import { BiEditAlt } from "react-icons/bi";
@@ -13,25 +13,25 @@ import api from "../../services/api";
 function ShowTSC(){
   const [technicalCommitee,setTechnicalCommitee] = useState([]);
   const params = useParams();
+ 
   useEffect(()=>{
-    api.get(`/teams/${params.teams_id}/technical_committee`).then(response=>{
-        setTechnicalCommitee(response.data);
-        console.log(response.data);
-        
+    const objectArray = [];
+    api.get(`/leagues/${params.leagues_id}/teams/${params.teams_id}/technical_committee`).then(response=>{
+        objectArray.push(response.data);
+        setTechnicalCommitee(objectArray);
     })
-},[params.teams_id])
+},[params.leagues_id, params.teams_id ])
 
 
     async function handleRemoveLeague(id){
-        const deleteResponse = await api.delete(`/teams/${params.teams_id}/technical_committee/${id}`);
+        const deleteResponse = await api.delete(`/leagues/${params.leagues_id}/teams/${params.teams_id}/technical_committee`);
         if(deleteResponse.status===204){
-            
             setTechnicalCommitee(technicalCommitee.filter(technicalCommitee=>technicalCommitee.id !== id))
             
         }
+
         window.location.reload();
     }
- 
     return(
       <Main>
       <Header 
@@ -44,30 +44,27 @@ function ShowTSC(){
                 <h1 class="title__name">Comissão Técnica</h1>
                 <Link to={`/leagues/${params.leagues_id}/teams/listTeams`} class="title__linkTeams" >Voltar</Link>
             </div>       
-        {technicalCommitee.map(technical=>{
-        return(
+        {technicalCommitee.map((technical)=>(
+        
         <main class="Teams" >
-               
                 <div class="Teams__dropzoneTeams">
                     <div class="Teams__dropzoneTeams__containerLinkName">
-                    <h2 class="Teams__dropzoneTeams__containerLinkName__title">{technical.year}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
-                    
-                    <Link to={`/modalCommiteeEdit/${params.teams_id}/${technical.id}`}title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
-                    <Link to="/listTeams"  onClick={()=>handleRemoveLeague(technical.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
+                    <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/modalCommiteeEdit`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
+                    <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/modalCommiteeEdit`}  onClick={()=>handleRemoveLeague(technical.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
                     </div>
-                    <p class="Teams__dropzoneTeams__object">Técnico(a): {technical.coach}</p>
-                    <p class="Teams__dropzoneTeams__object">Assistente Técnico: {technical.coach_assistent}</p>
-                    <p class="Teams__dropzoneTeams__object">Supervisor: {technical.supervisor}</p>
-                    <p class="Teams__dropzoneTeams__object">Personal Trainer:{technical.personal_trainer}</p>
-                    <p class="Teams__dropzoneTeams__object">Fisioterapeuta:{technical.physiotheapist}</p>
-                    <p class="Teams__dropzoneTeams__object">Massagista: {technical.masseuse}</p>
-                    <p class="Teams__dropzoneTeams__object">Médico: {technical.doctor}</p>                     
+                    <p class="Teams__dropzoneTeams__object"><strong>Técnico(a)</strong>: {technical.coach}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Assistente Técnico:</strong> {technical.coach_assistant}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Supervisor:</strong> {technical.supervisor}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Personal Trainer:</strong> {technical.personal_trainer}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Fisioterapeuta:</strong> {technical.physiotherapist}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Massagista:</strong> {technical.masseuse}</p>
+                    <p class="Teams__dropzoneTeams__object"><strong>Médico:</strong> {technical.doctor}</p>                     
                 </div>      
         </main>
-        );
-     })} 
+       
+            ))} 
         </TeamContainer>   
         </Main>
     )

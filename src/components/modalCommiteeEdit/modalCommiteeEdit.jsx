@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState} from "react";
 import {useNavigate,useParams, Link} from 'react-router-dom';
 import {Main, FormContentTeam} from "../modalCommiteeEdit/styles"
 import Header from "../header/header"
@@ -8,7 +8,7 @@ import api from "../../services/api";
 function ModalCommiteeEdit(){
     
     const [coach,setCoach] = useState();
-    const [coach_assistent, setCoachAssistent] = useState();
+    const [coach_assistant, setCoachAssistent] = useState();
     const [supervisor, setSupervisor] = useState();
     const [personal_trainer, setPersonalTrainer] = useState();
     const [physiotherapist, setPhysiotherapist] = useState();
@@ -16,35 +16,15 @@ function ModalCommiteeEdit(){
     const [doctor,setDoctor] = useState();
     const [year,setYear] = useState();
     const history = useNavigate();
+    const params = useParams();
    
-   
-    useEffect(() => {
-        GetTechnicalCommitee();
-      },)
-  
-
-    function GetTechnicalCommitee(){
-        const params = useParams();
-        useEffect(()=>{
-          api.get(`/teams/${params.teams_id}/technical_committee`).then(response=>{
-              setCoach(response)
-              setCoachAssistent(response[0].coach_assistent)
-              setSupervisor(response[0].supervisor)
-              setPersonalTrainer(response[0].personal_trainer)
-              setPhysiotherapist(response[0].physiotherapist)
-              setMasseuse(response[0].masseuse)
-              setDoctor(response[0].doctor)
-              setYear(response[0].year)  
-          })
-      },)
-     
-    
+      
      async function PutTechnicalCommitee(e){
         e.preventDefault();
         
-          const response = await api.put(`teams/${params.teams_id}/technical_committee/${params.technical_committee_id}`,{
+          const response = await api.put(`/leagues/${params.leagues_id}/teams/${params.teams_id}/technical_committee`,{
             coach,
-            coach_assistent,
+            coach_assistant,
             supervisor,
             personal_trainer,
             physiotherapist,
@@ -52,10 +32,10 @@ function ModalCommiteeEdit(){
             doctor,
             year,
         });
-        GetTechnicalCommitee()
+   
         history("/listTeams");
         console.log(response.data)
-      
+ 
 } 
    
     return(
@@ -78,7 +58,7 @@ function ModalCommiteeEdit(){
              <label for="nameTeam"><strong>Técnico(a)</strong></label>
              <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="nameTeam" value={coach} onChange={e=>setCoach(e.target.coach)}/>
              <label for="yearFundation"><strong>Técnico Assistente</strong></label>
-             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistent} onChange={e=>setCoachAssistent(e.target.coach_assistent)}/>
+             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistant} onChange={e=>setCoachAssistent(e.target.coach_assistant)}/>
              <label for="yearFundation"><strong>Supervisor</strong></label>
              <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={supervisor} onChange={e=>setSupervisor(e.target.supervisor)}/>
              <label  for="yearFundation"><strong>Personal Trainer</strong></label>
@@ -98,7 +78,7 @@ function ModalCommiteeEdit(){
             </div> 
          <div class="register__registerContainer__form__bt">
              <button type = "submit" class="register__registerContainer__form__bt__btRegister">Editar Comissão Técnica</button>
-             <Link to="/listTeams" class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
+             <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/showTSC`} class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>
         </div>
@@ -108,5 +88,5 @@ function ModalCommiteeEdit(){
     
     )
 }
-}
+
 export default ModalCommiteeEdit;

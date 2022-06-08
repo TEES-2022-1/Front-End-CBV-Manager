@@ -21,9 +21,7 @@ function ListPlayer(){
     async function handleRemovePlayer(id){
         const deleteResponse = await api.delete(`/leagues/${params.leagues_id}/teams/${params.teams_id}/players/${id}`);
         if(deleteResponse.status===204){
-            
-            setPlayer(player.filter(leagues=>leagues.id !== id))
-            
+            setPlayer(player.filter(leagues=>leagues.id !== id))     
         }
         window.location.reload();
     }
@@ -42,7 +40,6 @@ function ListPlayer(){
             </div>
             {player.map(players=>{
             return(
-                
         <main class="Teams" >
                 <div class="Teams__dropzoneTeams">
                     <div class="Teams__dropzoneTeams__containerLinkName">

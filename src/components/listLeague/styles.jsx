@@ -23,6 +23,13 @@ export const TeamContainer = styled.div`
          color:#0000FF;
          font-size:18px;
      }
+
+     &__linkTeams{
+        margin-right:40px;
+        text-decoration:none;
+        color:#0000FF;
+        font-size:18px;
+    }
  }
  .Teams{
     margin-left:20px;
