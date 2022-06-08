@@ -182,6 +182,25 @@ a {
                             transition: all ease 0.3s;
                         }
                     }
+
+                    &__btCancel{
+                        width:288px;
+                        height:50px;
+                        background-color:#1DA876;
+                        border:1px solid #D7D7D7;
+                        border-radius:5px;
+                        color:#FFFFFF;
+                        font-weight:600;
+                        cursor:pointer;
+                        margin-left:10px;
+                        padding:12px 98px;
+                        font-size:16px; 
+
+                        &:hover{
+                            background-color:#363F5F;
+                            transition: all ease 0.3s;
+                        }
+                    }
                 }
             }
         }

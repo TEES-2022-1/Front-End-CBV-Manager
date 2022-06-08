@@ -19,7 +19,7 @@ function ListPlayer(){
     },[params.leagues_id, params.teams_id])
 
     async function handleRemovePlayer(id){
-        const deleteResponse = await api.delete(`/leagues/${id}`);
+        const deleteResponse = await api.delete(`/leagues/${params.leagues_id}/teams/${params.teams_id}/players/${id}`);
         if(deleteResponse.status===204){
             
             setPlayer(player.filter(leagues=>leagues.id !== id))
@@ -49,7 +49,7 @@ function ListPlayer(){
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{players.name}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
                     <Link to={`/leagues/${params.leagues_id}/teams/${players.id}/formTeamEdit`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
-                    <Link to={`/leagues/${params.leagues_id}/teams/listTeams`}  onClick={()=>handleRemovePlayer(players.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
+                    <Link to={`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`}  onClick={()=>handleRemovePlayer(players.id)} class="Teams__dropzoneTeams__containerLinkName__icons__btDelete" title="Deletar"><MdDelete/></Link> 
                     </div>
                     </div>
                     <p class="Teams__dropzoneTeams__object">Data de Nascimento: {Moment(players.birthday).format('DD/MM/YYYY')}</p>

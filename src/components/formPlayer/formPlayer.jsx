@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useNavigate, useParams} from 'react-router-dom';
+import {useNavigate, useParams, Link} from 'react-router-dom';
 import {Main, FormContentTeam} from "../formTeam/styles"
 import Header from "../header/header"
 import api from "../../services/api";
@@ -22,8 +22,8 @@ function FormPlayer(){
             birthday,
             shirt_number,
         });
-          
-    history(`/leagues/${params.leagues_id}/teams/${params.teams_id}/listPlayer`);
+      alert("Jogador Cadastrado")    
+    history(`/leagues/${params.leagues_id}/teams/${params.teams_id}/formPlayer`);
  
     } 
         
@@ -58,6 +58,7 @@ function FormPlayer(){
             </div> 
          <div class="register__registerContainer__form__bt">
              <button type = "submit" class="register__registerContainer__form__bt__btRegister">Cadastrar Jogador</button>
+             <Link to={`/leagues/${params.leagues_id}/teams/listTeams`} class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>
         </div>
