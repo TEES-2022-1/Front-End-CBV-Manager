@@ -61,7 +61,7 @@ function FormTeamEdit(){
             </div> 
          <div class="register__registerContainer__form__bt">
              <button type = "submit" class="register__registerContainer__form__bt__btRegister">Atualizar Equipe</button>
-             <Link to="/listTeams" class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
+             <Link to={`/leagues/${params.leagues_id}/teams/listTeams`} class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>
         </div>
