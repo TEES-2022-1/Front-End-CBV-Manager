@@ -42,7 +42,7 @@ function ShowTSC(){
         <TeamContainer>
         <div class="title">
                 <h1 class="title__name">Comissão Técnica</h1>
-                <Link to="/listTeams" class="title__linkTeams" >Voltar</Link>
+                <Link to={`/leagues/${params.leagues_id}/teams/listTeams`} class="title__linkTeams" >Voltar</Link>
             </div>       
         {technicalCommitee.map(technical=>{
         return(

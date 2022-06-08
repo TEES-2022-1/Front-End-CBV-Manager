@@ -8,13 +8,12 @@ import api from "../../services/api";
 function ModalCommitee(){
     
     const [coach,setCoach] = useState();
-    const [coach_assistent, setCoachAssistent] = useState();
+    const [coach_assistant, setCoachAssistent] = useState();
     const [supervisor, setSupervisor] = useState();
     const [personal_trainer, setPersonalTrainer] = useState();
     const [physiotherapist, setPhysiotherapist] = useState();
     const [masseuse, setMasseuse] = useState();
     const [doctor,setDoctor] = useState();
-    const [year,setYear] = useState();
     const history = useNavigate();
     const params = useParams(); 
     
@@ -23,22 +22,21 @@ function ModalCommitee(){
      async function PostTechnicalCommitee(e){
         e.preventDefault();
         try{      
-          await api.post(`teams/${params.teams_id}/technical_committee`,{
+          await api.post(`leagues/${params.leagues_id}/teams/${params.teams_id}/technical_committee`,{
             coach,
-            coach_assistent,
+            coach_assistant,
             supervisor,
             personal_trainer,
             physiotherapist,
             masseuse,
             doctor,
-            year,
         });
           
-        history("/listTeams");
+        history(`/teams/${params.teams_id}/showTSC`);
     }catch(error){
         const message = error.response.status
         if(message === 500){
-            alert("Comissão Técnica já cadastrada neste ano!")
+            alert("Houve um erro ao cadastrar a comissão técnica!")
         }
     } 
 } 
@@ -63,7 +61,7 @@ function ModalCommitee(){
              <label for="nameTeam"><strong>Técnico(a)</strong></label>
              <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="nameTeam" value={coach} onChange={e=>setCoach(e.target.value)}/>
              <label for="yearFundation"><strong>Técnico Assistente</strong></label>
-             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistent} onChange={e=>setCoachAssistent(e.target.value)}/>
+             <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={coach_assistant} onChange={e=>setCoachAssistent(e.target.value)}/>
              <label for="yearFundation"><strong>Supervisor</strong></label>
              <input required type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="yearFundation" value={supervisor} onChange={e=>setSupervisor(e.target.value)}/>
              <label  for="yearFundation"><strong>Personal Trainer</strong></label>
@@ -77,8 +75,6 @@ function ModalCommitee(){
             <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="masseuse" value={masseuse} onChange={e=>setMasseuse(e.target.value)}/>
             <label for="doctor"><strong>Médico</strong></label>
             <input required type="text" class="register__registerContainer__form__inputs__inputRight__input" id="doctor" value={doctor} onChange={e=>setDoctor(e.target.value)}/>
-            <label for="doctor"><strong>Ano</strong></label>
-            <input required type="number" class="register__registerContainer__form__inputs__inputRight__input" id="year" value={year} onChange={e=>setYear(e.target.value)}/>      
             </div>
             </div> 
          <div class="register__registerContainer__form__bt">
