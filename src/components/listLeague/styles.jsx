@@ -58,6 +58,11 @@ export const TeamContainer = styled.div`
                 padding-right:40px;
                 padding-top:10px;
                 font-size:20px;
+
+                &__btClassification{
+                    margin-right:20px;
+                    color:black;
+                }
                 
                 &__btTeam{
                     margin-right:20px;

@@ -5,8 +5,10 @@ import Header from "../header/header";
 import { BiEditAlt } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import {AiOutlineTeam} from "react-icons/ai";
-import {FaPeopleArrows} from "react-icons/fa"
+import {FaPeopleArrows} from "react-icons/fa";
+import {BsTable} from "react-icons/bs";
 import api from "../../services/api";
+
 import Moment from "moment";
 
 
@@ -48,6 +50,7 @@ function ListLeague(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{leagues.title}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
+                    <Link to="/classification" title="Classificação" class="Teams__dropzoneTeams__containerLinkName__icons__btClassification"><BsTable/></Link>    
                     <Link to={`/leagues/${leagues.id}/teams/formTeam`} title="Cadastrar Equipe" class="Teams__dropzoneTeams__containerLinkName__icons__btRegisterTeam"><FaPeopleArrows/></Link>
                     <Link to={`/leagues/${leagues.id}/teams/listTeams`} title="Equipe(s)" class="Teams__dropzoneTeams__containerLinkName__icons__btTeam"><AiOutlineTeam/></Link>
                     <Link to={`/formLeagueEdit/${leagues.id}`} title="Editar" class="Teams__dropzoneTeams__containerLinkName__icons__btEdit"><BiEditAlt/></Link>
