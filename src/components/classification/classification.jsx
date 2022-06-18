@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "../header/header";
-import {Main, ContentTable} from "./styles"
+import {Main, TableContent} from "./styles"
+
 function Classification(){
+    
     return(
         <Main>
        <Header 
@@ -9,63 +11,120 @@ function Classification(){
         linkTwo = 'Jogador' linkRedirectPlayer = '/formPlayer'
         linkOne = 'Liga' linkRedirectLeague = '/formLeague'
         />
-        <h1 class="tableTitle">Classificação</h1>
-        <ContentTable>
-          <div class="tableContainer">
-          <table>
-              <div class="tableContainer__title">
-              <tr>
-                  <th>Equipes</th>
-                  <th>PJ</th>
-                  <th>V</th>
-                  <th>D</th>
-                  <th>PTS</th>
-              </tr>
-              </div>
+        <TableContent>
+                <h1>Classificação</h1>
+                <table class="tableClassification">
+                        <tr>
+                            <th>Equipe</th>
+                            <th>PJ</th>
+                            <th>V</th>
+                            <th>D</th>
+                            <th>S</th>
+                            <th>Pts</th>
+                        </tr>
+                    
+                    
+                        <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
 
-              <div class="tableContainer__description">
-              <tr>
-                  <td>SESI</td>
-                  <td>15</td>
-                  <td>8</td>
-                  <td>7</td>
-                  <td>30</td>
-              </tr>
-              <tr>
-                  <td>SESI</td>
-                  <td>15</td>
-                  <td>8</td>
-                  <td>7</td>
-                  <td>30</td>
-              </tr>
-              <tr>
-                  <td>SESI</td>
-                  <td>15</td>
-                  <td>8</td>
-                  <td>7</td>
-                  <td>30</td>
-              </tr>
-              <tr>
-                  <td>SESI</td>
-                  <td>15</td>
-                  <td>8</td>
-                  <td>7</td>
-                  <td>30</td>
-              </tr>
-              
-              <tr>
-                  <td>SESI</td>
-                  <td>15</td>
-                  <td>8</td>
-                  <td>7</td>
-                  <td>30</td>
-              </tr>
-              </div>
-          </table>
-          </div>  
-        </ContentTable>
+                        <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+                        <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr>
+
+                         <tr>
+                        <td>SESI</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>5</td>
+                        <td>60:18</td>
+                        <td>60</td>
+                        </tr> 
+                   
+                </table>
+        </TableContent>
         </Main>
-     
     )
 }
 
