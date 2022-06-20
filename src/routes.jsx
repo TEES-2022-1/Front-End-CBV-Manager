@@ -17,7 +17,7 @@ import FormPlayer from './components/formPlayer/formPlayer';
 import FormPlayerEdit from './components/formPlayerEdit/formPlayerEdit';
 import Classification from './components/classification/classification';
 import ListPlayer from './components/listPlayer/listPlayer';
-
+import MatchTable from './components/matchTable/matchTable';
 
  function Routes(){
     return(
@@ -36,6 +36,7 @@ import ListPlayer from './components/listPlayer/listPlayer';
         <Route element={<FormPlayerEdit/>} path="/leagues/:leagues_id/teams/:teams_id/formPlayerEdit"/>
         <Route element={<Classification/>} path="/classification"/>
         <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
+        <Route element={<MatchTable/>} path="/matchTable"/>
         </Router>
         </BrowserRouter>
         
