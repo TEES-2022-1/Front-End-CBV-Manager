@@ -17,7 +17,7 @@ function MatchTable(){
 
           <div class="content">
             <div class="content__info">
-                <p><strong>Classificatória</strong></p>
+                <p class="content__info__title"><strong>Classificatória</strong></p>
                 <NativeSelect>
                 <option value={1}>Rodada 1</option>
                 <option value={2}>Rodada 2</option>

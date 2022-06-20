@@ -13,6 +13,10 @@ margin-left:10px;
             display:flex;
             flex-direction:row;
             justify-content:space-around;
+
+          &__title{
+            font-style:italic;
+          }
         }
     }
 `;
