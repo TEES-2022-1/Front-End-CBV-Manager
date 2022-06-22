@@ -46,12 +46,9 @@ function MatchTable(){
                   </div> 
                   <img class="content__card__teams__matches__imgTeam" src={team} alt="Cruzeiro" width="120" height="120" />
                   <p>SADA CRUZEIRO</p>
-                  
                   </div>
                   </div>
                 </div>
-
-
                 <div class="content__card">
                   <div class="content__card__teams">
                   <p>Jogo <strong>1</strong> | <strong>1 Rodada</strong> | <strong>POLIESPORTIVO DO RIACHO</strong></p>
