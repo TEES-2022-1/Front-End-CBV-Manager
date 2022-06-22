@@ -81,6 +81,11 @@ export const TeamContainer = styled.div`
                     color:black;
                     margin-right:20px;
                 }
+
+                &__btMatchTable{
+                    color:black;
+                    margin-right:20px;
+                }
             } 
         }
 

@@ -13,7 +13,7 @@ export const TableContent = styled.div`
  .tableClassification{
         border:1px solid #000000;
         border-collapse: collapse;
-        width:30%;
+        width:70%;
        
         
      td, th{

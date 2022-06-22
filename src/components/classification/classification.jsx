@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../header/header";
 import {Main, TableContent} from "./styles"
 
+
 function Classification(){
     
     return(
