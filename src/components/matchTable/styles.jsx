@@ -28,6 +28,7 @@ margin-left:10px;
           font-size:15px;
 
          
+      
 
           &__teams{
             display:flex;
@@ -36,12 +37,31 @@ margin-left:10px;
             padding-top:10px;
             
           
+            &__icons{
+              display:flex;
+              flex-direction:row;
+              margin-left:10px;
+              justify-content:space-between;
+              height:10px;
+              margin-top:5px;
+             
+              &__edit{
+                padding-right:10px;
+                color:#000000;
+              }
+
+              &__delete{
+                padding-right:10px;
+                color:#000000;
+              }
+            }
 
             &__matches{
               display:flex;
               flex-direction:row;
               align-items:center;
               padding-bottom:60px;
+              margin-bottom:30px;
 
               &__setsPoints{
                 display:flex;

@@ -36,7 +36,7 @@ import MatchTable from './components/matchTable/matchTable';
         <Route element={<FormPlayerEdit/>} path="/leagues/:leagues_id/teams/:teams_id/formPlayerEdit"/>
         <Route element={<Classification/>} path="/classification"/>
         <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
-        <Route element={<MatchTable/>} path="/matchTable"/>
+        <Route element={<MatchTable/>} path="/leagues/:leagues_id/matchTable"/>
         </Router>
         </BrowserRouter>
         
