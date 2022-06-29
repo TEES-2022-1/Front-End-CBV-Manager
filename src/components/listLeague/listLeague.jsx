@@ -51,7 +51,7 @@ function ListLeague(){
                     <div class="Teams__dropzoneTeams__containerLinkName">
                     <h2 class="Teams__dropzoneTeams__containerLinkName__title">{leagues.title}</h2>
                     <div class="Teams__dropzoneTeams__containerLinkName__icons">
-                    <Link to={`/leagues/${leagues.id}/confrontations/matchTable`} title="Tabela de Jogos" class="Teams__dropzoneTeams__containerLinkName__icons__btMatchTable"><GiTicket/></Link>
+                    <Link to={`/leagues/${leagues.id}/confrontations/classificatory/matchTable`} title="Tabela de Jogos" class="Teams__dropzoneTeams__containerLinkName__icons__btMatchTable"><GiTicket/></Link>
                     <Link to="/classification" title="Classificação" class="Teams__dropzoneTeams__containerLinkName__icons__btClassification"><BsTable/></Link>    
                     <Link to={`/leagues/${leagues.id}/teams/formTeam`} title="Cadastrar Equipe" class="Teams__dropzoneTeams__containerLinkName__icons__btRegisterTeam"><FaPeopleArrows/></Link>
                     <Link to={`/leagues/${leagues.id}/teams/listTeams`} title="Equipe(s)" class="Teams__dropzoneTeams__containerLinkName__icons__btTeam"><AiOutlineTeam/></Link>

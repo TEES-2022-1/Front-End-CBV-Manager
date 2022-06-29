@@ -13,7 +13,7 @@ function MatchTable(){
     const [confrontantions,setConfrotantions] = useState([]);
     useEffect(()=>{
       const objectArray = [];
-        api.get(`/leagues/${params.leagues_id}/confrontations/`).then(response=>{
+        api.get(`/leagues/${params.leagues_id}/confrontations/classificatory`).then(response=>{
             objectArray.push(response.data);
             setConfrotantions(objectArray);    
         })
@@ -42,7 +42,7 @@ function MatchTable(){
                   <p>Jogo <strong>{confrontation.id}</strong> | <strong>{confrontation.round} Rodada</strong> | <strong>POLIESPORTIVO DO RIACHO</strong></p>
                   <span>{confrontation.scheduling}</span>
                   <div class="content__card__teams__icons">
-                  <Link to="/" class="content__card__teams__icons__edit">{<BiEditAlt/>}</Link>
+                  <Link to={`/leagues/${params.leagues_id}/confrontations/classificatory/${confrontation.id}/formResultEdit`} class="content__card__teams__icons__edit">{<BiEditAlt/>}</Link>
                   <Link to="/" class="content__card__teams__icons__delete">{<MdDelete/>}</Link> 
                   </div>
                   <div class="content__card__teams__matches">
