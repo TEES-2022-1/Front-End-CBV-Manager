@@ -71,19 +71,19 @@ function MatchTable(){
                   <p>SADA CRUZEIRO</p>  
                   <img src={team} alt="Cruzeiro" width="120" height="120"/>
                   <div class="content__card__teams__matches__setsPoints">
-                  <span>{confrontation.set1_points_host}</span>
-                  <span>{confrontation.set2_points_host}</span>
-                  <span>{confrontation.set3_points_host}</span>
-                  <span>{confrontation.set4_points_host = "NULL" ? "": confrontation.set4_points_host}</span>
-                  <span>{confrontation.set5_points_host = "NULL" ? "": confrontation.set5_points_host}</span>
+                  <span>{confrontation.set1_points_host = 1}</span>
+                  <span>{confrontation.set2_points_host = 1}</span>
+                  <span>{confrontation.set3_points_host = 1}</span>
+                  <span>{confrontation.set4_points_host = "NULL" ? "1": confrontation.set4_points_host}</span>
+                  <span>{confrontation.set5_points_host = "NULL" ? "1": confrontation.set5_points_host}</span>
                   </div> 
-                  <p>{confrontation.result_host} - {confrontation.result_guest}</p>
+                  <p><strong>{confrontation.result_host = 40} - {confrontation.result_guest = 50}</strong></p>
                   <div class="content__card__teams__matches__setsPoints">
-                  <span>{confrontation.set1_points_guest}</span>
-                  <span>{confrontation.set2_points_guest}</span>
-                  <span>{confrontation.set3_points_guest}</span>
-                  <span>{confrontation.set4_points_host = "NULL" ? "": confrontation.set4_points_host}</span>
-                  <span>{confrontation.set5_points_host = "NULL" ? "": confrontation.set5_points_host}</span>
+                  <span>{confrontation.set1_points_guest = 1}</span>
+                  <span>{confrontation.set2_points_guest = 1}</span>
+                  <span>{confrontation.set3_points_guest = 1}</span>
+                  <span>{confrontation.set4_points_host = "NULL" ? "1": confrontation.set4_points_host}</span>
+                  <span>{confrontation.set5_points_host = "NULL" ? "1": confrontation.set5_points_host}</span>
                   </div> 
                   <img class="content__card__teams__matches__imgTeam" src={team} alt="Cruzeiro" width="120" height="120" />
                   <p>SADA CRUZEIRO</p>

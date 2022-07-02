@@ -27,9 +27,6 @@ margin-left:10px;
           justify-content:center;
           font-size:15px;
 
-         
-      
-
           &__teams{
             display:flex;
             flex-direction:column;
@@ -42,8 +39,8 @@ margin-left:10px;
               flex-direction:row;
               margin-left:10px;
               justify-content:space-between;
-              height:10px;
-              margin-top:5px;
+              height:15px;
+              margin-top:2px;
              
               &__edit{
                 padding-right:10px;
@@ -60,17 +57,18 @@ margin-left:10px;
               display:flex;
               flex-direction:row;
               align-items:center;
-              padding-bottom:60px;
-              margin-bottom:30px;
+              padding-bottom:50px;
+              margin-bottom:20px;
 
               &__setsPoints{
                 display:flex;
                 flex-direction:column;
                 justify-content:space-between;
+             
                 
                
                 span{
-                  padding-top:5px;
+                  padding-top:12px;
                   padding-left:20px;
                   padding-right:20px;
                 }
