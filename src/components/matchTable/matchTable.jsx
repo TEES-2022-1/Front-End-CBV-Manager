@@ -12,6 +12,8 @@ function MatchTable(){
     const params = useParams();
     const [confrontantions,setConfrotantions] = useState([]);
     const [selectedOption, setSelectedOption] = useState(1);
+    var arrayTeste = [];
+    const valor = selectedOption;
     useEffect(()=>{
         api.get(`/leagues/${params.leagues_id}/confrontations/classificatory`).then(response=>{
           
@@ -23,9 +25,16 @@ function MatchTable(){
     const value = event.target.value;
     setSelectedOption(value);
    }
-   
-   const valor = selectedOption;
-   console.log(valor)
+
+   confrontantions.forEach((item)=>{
+    var duplicated = arrayTeste.findIndex(redItem=>{
+      return item.round == redItem.round;
+    }) > -1;
+
+    if(!duplicated) {
+      arrayTeste.push(item)
+    }
+   }); 
     return(
        <Main>
         <Header 
@@ -41,7 +50,7 @@ function MatchTable(){
                 <p class="content__info__title"><strong>Fase Classificatória</strong></p>
                
                 <NativeSelect value={selectedOption} onChange={handleChange}>
-                {confrontantions.map(rounds=>(
+                {arrayTeste.map(rounds=>(
                 <option key={rounds} value={rounds.value}>{rounds.round}</option>
                 ))}
                </NativeSelect>
