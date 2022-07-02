@@ -5,6 +5,7 @@ import Header from "../header/header"
 import api from "../../services/api";
 
 
+
 function FormTeam(){
     
     const [name,setName] = useState('');
@@ -12,6 +13,7 @@ function FormTeam(){
     const [year_foundation, setYear_foundation] = useState();
     const [gymnasium, setGymnasium] = useState();
     const [affiliated_federation_in,setAffiliated] = useState();
+    const [image,setImage] = useState();
     const history = useNavigate();
     const params = useParams(); 
     
@@ -24,7 +26,9 @@ function FormTeam(){
             category,
             year_foundation,
             gymnasium,
-            affiliated_federation_in
+            affiliated_federation_in,
+            image,
+
         });
           
         history(`/leagues/${params.leagues_id}/teams/listTeams`);
@@ -44,7 +48,7 @@ function FormTeam(){
         <h1 class="register__registerContainer__registerHeader__title">Equipes</h1>
         
             </div>
-        <form onSubmit = {PostTeam} class="register__registerContainer__form">
+        <form encType="multipart/form-data" onSubmit = {PostTeam} class="register__registerContainer__form">
          <div class="register__registerContainer__form__inputs">
              <div class="register__registerContainer__form__inputs__inputLeft">
              <label for="nameTeam"><strong>Nome</strong></label>
@@ -62,7 +66,9 @@ function FormTeam(){
                  <option value= "" disabled selected>Selecione a categoria...</option>
                  <option value="MALE">MASCULINO</option>
                  <option value="FEMALE">FEMININO</option>
-             </select>   
+             </select>
+             <label for="teamImage"><strong>Emblema</strong></label>
+             <input required type="file" class="register__registerContainer__form__inputs__inputRight__input" id="teamImage" value={image} onChange={e=>setImage(e.target.value)}/>   
             </div>
             </div> 
          <div class="register__registerContainer__form__bt">

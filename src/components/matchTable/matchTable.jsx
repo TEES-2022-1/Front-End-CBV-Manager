@@ -11,14 +11,21 @@ import team from '../../assets/126.png'
 function MatchTable(){
     const params = useParams();
     const [confrontantions,setConfrotantions] = useState([]);
+    const [selectedOption, setSelectedOption] = useState(1);
     useEffect(()=>{
-      const objectArray = [];
         api.get(`/leagues/${params.leagues_id}/confrontations/classificatory`).then(response=>{
-            objectArray.push(response.data);
-            setConfrotantions(objectArray);    
+          
+            setConfrotantions(response.data);    
         })
     },[params.leagues_id])
-  
+
+   const handleChange = event=>{
+    const value = event.target.value;
+    setSelectedOption(value);
+   }
+   
+   const valor = selectedOption;
+   console.log(valor)
     return(
        <Main>
         <Header 
@@ -28,17 +35,23 @@ function MatchTable(){
         />
         <MatchContent>
           <h1>Tabela de Jogos</h1>
-          {confrontantions.map(confrontation=>(
+          
           <div class="content">           
             <div class="content__info">
                 <p class="content__info__title"><strong>Fase Classificatória</strong></p>
-                <NativeSelect>
-                <option value={confrontation.round}>{confrontation.round}</option>
-                </NativeSelect>
+               
+                <NativeSelect value={selectedOption} onChange={handleChange}>
+                {confrontantions.map(rounds=>(
+                <option key={rounds} value={rounds.value}>{rounds.round}</option>
+                ))}
+               </NativeSelect>
+              
                 </div>
-                
+                {confrontantions.map(confrontation=>(
                 <div class="content__card">
-                  <div class="content__card__teams">
+                
+                  {(selectedOption===valor ? confrontation.round == selectedOption: "") && <div class="content__card__teams"> 
+                 
                   <p>Jogo <strong>{confrontation.id}</strong> | <strong>{confrontation.round} Rodada</strong> | <strong>POLIESPORTIVO DO RIACHO</strong></p>
                   <span>{confrontation.scheduling}</span>
                   <div class="content__card__teams__icons">
@@ -65,12 +78,19 @@ function MatchTable(){
                   </div> 
                   <img class="content__card__teams__matches__imgTeam" src={team} alt="Cruzeiro" width="120" height="120" />
                   <p>SADA CRUZEIRO</p>
+             
                   </div>
-                  </div>
-                </div>      
+               
+                  </div>}
+                  
+                </div>    
+                
+                   ))}  
+                 
           </div>
-        ))}
+        
         </MatchContent>
+      
        </Main>
       
       
