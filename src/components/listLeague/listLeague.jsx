@@ -16,7 +16,7 @@ import Moment from "moment";
 
 function ListLeague(){
     const [league,setLeague] = useState([]);
-
+   
     useEffect(()=>{
         api.get('/leagues').then(response=>{
             setLeague(response.data);    
@@ -33,7 +33,6 @@ function ListLeague(){
         window.location.reload();
     }
 
- 
  
     return(
         <Main>

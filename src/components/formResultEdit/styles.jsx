@@ -31,7 +31,7 @@ a {
         align-items:center;
         justify-content:center;
         height:100%;
-        padding-top:50px;
+        padding-top:80px;
 
         &__registerContainer{
             display:flex;
@@ -40,8 +40,8 @@ a {
             flex-direction:column;
             background-color:#FFFFFF;
             border-radius:5px;
-            width:916px;
-            height:562px;
+            width:726px;
+            height:568px;
 
             &__registerHeader{
                 display:flex;
@@ -73,8 +73,8 @@ a {
                   display:flex;
                   flex-direction:column;
                   flex-wrap:wrap;
-                  width:500px;
-                  height:250px;
+                  width:300px;
+                  height:220px;
                   margin-right:90px;
              
                   
@@ -89,8 +89,8 @@ a {
                       }
                    
                     &__input{
-                        width:288px;
-                        height:53px;
+                        width:168px;
+                        height:23px;
                         padding-top:34px;
                         background-color:#E7E9EE;
                         border:1px solid #D7D7D7;
@@ -99,7 +99,7 @@ a {
                         font-weight:400;
                         font-size:16px;
                         padding-left:23px;
-                        padding-top:14px;
+                        padding-top:10px;
                         padding-bottom:15px;
                      
                        
@@ -130,8 +130,8 @@ a {
                     }
 
                   &__input{
-                      width:288px;
-                      height:53px;
+                      width:168px;
+                      height:23px;
                       padding-top:34px;
                       background-color:#E7E9EE;
                       border:1px solid #D7D7D7;
@@ -140,7 +140,7 @@ a {
                       font-weight:400;
                       font-size:16px;
                       padding-left:23px;
-                      padding-top:14px;
+                      padding-top:10px;
                       padding-bottom:15px;
                      
 
@@ -163,7 +163,7 @@ a {
             } 
 
                 &__bt{
-                    padding-top:134px;
+                    padding-top:180px;
                     display:flex; 
                     flex-direction:row;
                     align-items:center;
@@ -171,8 +171,8 @@ a {
 
                     
                     &__btCancel{
-                        width:288px;
-                        height:50px;
+                        width:208px;
+                        height:40px;
                         background-color:#1DA876;
                         border:1px solid #D7D7D7;
                         border-radius:5px;
@@ -180,7 +180,7 @@ a {
                         font-weight:600;
                         cursor:pointer;
                         margin-left:10px;
-                        padding:12px 98px;
+                        padding:8px 68px;
                         font-size:16px; 
 
                         &:hover{
@@ -191,14 +191,15 @@ a {
                    
 
                     &__btRegister{
-                        width:288px;
-                        height:50px;
+                        width:208px;
+                        height:40px;
                         background-color:#1DA876;
                         border:1px solid #D7D7D7;
                         border-radius:5px;
                         color:#FFFFFF;
                         font-size:16px;
                         font-weight:600;
+                        padding-top:2px;
                         cursor:pointer;
                        
                         

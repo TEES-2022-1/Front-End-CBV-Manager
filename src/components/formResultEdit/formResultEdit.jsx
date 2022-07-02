@@ -55,43 +55,43 @@ function FormResultEdit(){
     <main class="register">
         <div class="register__registerContainer">
             <div class="register__registerContainer__registerHeader">
-        <h1 class="register__registerContainer__registerHeader__title">Editar Liga</h1>
+        <h1 class="register__registerContainer__registerHeader__title">Resultados</h1>
             </div>
         <form onSubmit = {PutLeague} class="register__registerContainer__form">
          <div class="register__registerContainer__form__inputs">
              <div class="register__registerContainer__form__inputs__inputLeft">
-             <label for="hostPoints"><strong>Pontos Host</strong></label>
-             <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="hostPoints" value={result_host} onChange={e=>setResultHost(e.target.value)}/>  
-             <label for="set1Host"><strong>Host: Set 1</strong></label>
-             <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="set1Host" value={set1_points_host} onChange={e=>setSet1H(e.target.value)}/>  
-             <label for="set2Host"><strong>Host: Set 2</strong></label>
+             <label for="hostPoints"><strong>Pontos Mandante</strong></label>
+             <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="hostPoints"  onChange={e=>setResultHost(e.target.value)}/>  
+             <label for="set1Host"><strong>Mandante - Set 1</strong></label>
+             <input type = "number" class="register__registerContainer__form__inputs__inputLeft__input" id="set1Host" value={set1_points_host} onChange={e=>setSet1H(e.target.value)}/>  
+             <label for="set2Host"><strong>Mandante - Set 2</strong></label>
              <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="set2Host" value={set2_points_host} onChange={e=>setSet2H(e.target.value)}/>  
-             <label for="set3Host"><strong>Host: Set 3</strong></label>
+             <label for="set3Host"><strong>Mandante - Set 3</strong></label>
              <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="set3Host" value={set3_points_host} onChange={e=>setSet3H(e.target.value)}/>  
-             <label for="set4Host"><strong>Host: Set 4</strong></label>
+             <label for="set4Host"><strong>Mandante - Set 4</strong></label>
              <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="set4Host" value={set4_points_host} onChange={e=>setSet4H(e.target.value)}/>  
-             <label for="set5Host"><strong>Host: Set 5</strong></label>
+             <label for="set5Host"><strong>Mandante - Set 5</strong></label>
              <input type = "text" class="register__registerContainer__form__inputs__inputLeft__input" id="set5Host" value={set5_points_host} onChange={e=>setSet5H(e.target.value)}/>  
              </div>
     
              <div class="register__registerContainer__form__inputs__inputRight">
             <label for="guestPoints"><strong>Pontos Visitante</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="guestPoints" value={result_guest} onChange={e=>setResultGuest(e.target.value)}/>
-            <label for="set1Guest"><strong>Fase de Classificação</strong></label>
+            <label for="set1Guest"><strong>Visitante - Set 1</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="set1Guest" value={set1_points_guest} onChange={e=>setSet1G(e.target.value)}/>
-            <label for="set2Guest"><strong>Fase de Classificação</strong></label>
+            <label for="set2Guest"><strong>Visitante - Set 2</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="set2Guest" value={set2_points_guest} onChange={e=>setSet2G(e.target.value)}/>
-            <label for="set3Guest"><strong>Fase de Classificação</strong></label>
+            <label for="set3Guest"><strong>Visitante - Set 3</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="set3Guest" value={set3_points_guest} onChange={e=>setSet3G(e.target.value)}/>
-            <label for="set4Guest"><strong>Fase de Classificação</strong></label>
+            <label for="set4Guest"><strong>Visitante - Set 4</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="set4Guest" value={set4_points_guest} onChange={e=>setSet4G(e.target.value)}/>
-            <label for="set5Guest"><strong>Fase de Classificação</strong></label>
+            <label for="set5Guest"><strong>Visitante - Set 5</strong></label>
             <input type = "number"  class="register__registerContainer__form__inputs__inputRight__input"  id="set5Guest" value={set5_points_guest} onChange={e=>setSet5G(e.target.value)}/>
             
             </div>
             </div> 
          <div class="register__registerContainer__form__bt">
-             <button type = "submit" class="register__registerContainer__form__bt__btRegister">Atualizar Liga</button>
+             <button type = "submit" class="register__registerContainer__form__bt__btRegister">Registrar</button>
              <Link to="/" class="register__registerContainer__form__bt__btCancel">Cancelar</Link>
          </div>
         </form>

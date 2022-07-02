@@ -38,7 +38,8 @@ import FormResultEdit from './components/formResultEdit/formResultEdit';
         <Route element={<Classification/>} path="/classification"/>
         <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
         <Route element={<MatchTable/>} path="/leagues/:leagues_id/confrontations/classificatory/matchTable"/>
-        <Route element={<FormResultEdit/>} path="/leagues/:leagues_id/confrontations/classificatory/:confrontation_id"/>
+        <Route element={<FormResultEdit/>} path="/leagues/:leagues_id/confrontations/classificatory/:confrontation_id/formResultEdit"/>
+
         </Router>
         </BrowserRouter>
         
