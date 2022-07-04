@@ -27,7 +27,10 @@ export const TableContent = styled.div`
         padding-top:12px;
         background-color:#E5E5E5;
      }
-
+     
+      tr:nth-child(-n+9){
+         background-color: hsla(120, 100%, 75%, 0.3);
+     }
      td{
         text-align:left;
      }
