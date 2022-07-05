@@ -19,6 +19,7 @@ import Classification from './components/classification/classification';
 import ListPlayer from './components/listPlayer/listPlayer';
 import MatchTable from './components/matchTable/matchTable';
 import FormResultEdit from './components/formResultEdit/formResultEdit';
+import Bracket from './components/bracket/bracket';
 
  function Routes(){
     return(
@@ -39,6 +40,7 @@ import FormResultEdit from './components/formResultEdit/formResultEdit';
         <Route element={<ListPlayer/>} path="/leagues/:leagues_id/teams/:teams_id/listPlayer"/>
         <Route element={<MatchTable/>} path="/leagues/:leagues_id/confrontations/classificatory/matchTable"/>
         <Route element={<FormResultEdit/>} path="/leagues/:leagues_id/confrontations/classificatory/:confrontation_id/formResultEdit"/>
+        <Route element={<Bracket/>} path="/bracket"/>
 
         </Router>
         </BrowserRouter>
