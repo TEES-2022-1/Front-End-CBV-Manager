@@ -44,9 +44,9 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 40%;
   min-width: 18em;
-  margin: 20px auto;
+  margin: 18px auto;
 }
 
 h1, h2 { 
@@ -101,7 +101,8 @@ h2 {
   font-weight: 400;
   text-align: center;
   font-style: italic;
-  margin-bottom: 0.5em;
+  margin-left:0.6em;
+  margin-bottom: 0.1em;
 }
 
 .tournament-bracket__list {
@@ -496,8 +497,7 @@ h2 {
 }
 
 .tournament-bracket__medal {
-  padding: 0 0.5em;
-}
+ 
 
 .tournament-bracket__medal--gold {
   color: #FFD700;

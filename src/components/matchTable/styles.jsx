@@ -7,6 +7,22 @@ export const Main = styled.div`
 
 export const MatchContent = styled.div`
 margin-left:10px;
+
+    .header{
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+      padding-left:10px;
+      padding-right:20px;
+
+      &__bracket{
+        margin-right:40px;
+        text-decoration:none;
+        color:#0000FF;
+        font-size:18px;
+      }
+    }
     .content{
         font-size:20px;
 
