@@ -6,7 +6,7 @@ import { NativeSelect } from '@mui/material';
 import { BiEditAlt } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import api from "../../services/api";
-import team from '../../assets/126.png'
+
 
 function MatchTable(){
     const params = useParams();
@@ -70,7 +70,7 @@ function MatchTable(){
                   </div>
                   <div class="content__card__teams__matches">
                   <p>SADA CRUZEIRO</p>  
-                  <img src={team} alt="Cruzeiro" width="120" height="120"/>
+                 
                   <div class="content__card__teams__matches__setsPoints">
                   <span>{confrontation.set1_points_host}</span>
                   <span>{confrontation.set2_points_host}</span>
