@@ -68,7 +68,7 @@ function FormTeam(){
                  <option value="FEMALE">FEMININO</option>
              </select>
              <label for="teamImage"><strong>Emblema</strong></label>
-             <input required type="file" class="register__registerContainer__form__inputs__inputRight__input" id="teamImage" value={image} onChange={e=>setImage(e.target.value)}/>   
+             <input type="file" class="register__registerContainer__form__inputs__inputRight__input" id="teamImage" value={image} onChange={e=>setImage(e.target.value)}/>   
             </div>
             </div> 
          <div class="register__registerContainer__form__bt">
