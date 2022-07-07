@@ -43,8 +43,10 @@ function MatchTable(){
         linkOne = 'Liga' linkRedirectLeague = '/'
         />
         <MatchContent>
+          <div class="header">
           <h1>Tabela de Jogos</h1>
-          
+          <Link  class="header__bracket" to="/bracket">Chaveamento</Link>
+          </div>
           <div class="content">           
             <div class="content__info">
                 <p class="content__info__title"><strong>Fase Classificatória</strong></p>
@@ -65,7 +67,6 @@ function MatchTable(){
                   <span>{confrontation.scheduling}</span>
                   <div class="content__card__teams__icons">
                   <Link to={`/leagues/${params.leagues_id}/confrontations/classificatory/${confrontation.id}/formResultEdit`} class="content__card__teams__icons__edit">{<BiEditAlt/>}</Link>
-                  <Link to="/" class="content__card__teams__icons__delete">{<MdDelete/>}</Link> 
                   </div>
                   <div class="content__card__teams__matches">
                   <p>SADA CRUZEIRO</p>  
