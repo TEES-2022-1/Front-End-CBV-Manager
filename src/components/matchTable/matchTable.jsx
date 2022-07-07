@@ -86,7 +86,7 @@ function MatchTable(){
                   <span>{confrontation.set4_points_host = "NULL" ? "": confrontation.set4_points_host}</span>
                   <span>{confrontation.set5_points_host = "NULL" ? "": confrontation.set5_points_host}</span>
                   </div> 
-                  <img class="content__card__teams__matches__imgTeam" src={team} alt="Cruzeiro" width="120" height="120" />
+                  
                   <p>SADA CRUZEIRO</p>
              
                   </div>
